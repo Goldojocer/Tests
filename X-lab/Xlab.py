@@ -21,8 +21,8 @@ app = FastAPI()
 
 
 async def add_user(user_id: int, data: 'UserModel'):
-    users_collection = database.get_collection("users")
-    user = await users_collection.find_one({"user_id": 5})
+    users_collection = database.get_collection("test_user_collection")
+    user = await users_collection.find_one({"user_id":  user_id})
 
     if not user:
         data_to_mongo = {
